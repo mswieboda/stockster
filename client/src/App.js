@@ -1,15 +1,28 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import Search from './components/Search';
+import Stock from './components/Stock';
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <header>
-        Stockster
-        <Search/>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <header>
+          Stockster
+          <Search/>
+        </header>
+      </div>
+      <Switch>
+        <Route path="/stocks/:symbol">
+          <Stock />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
