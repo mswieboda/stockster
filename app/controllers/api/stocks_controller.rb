@@ -4,6 +4,9 @@ class Api::StocksController < ApplicationController
   end
 
   def index
-    render json: []
+    render json: [
+      { name: "Apple Inc.", symbol: "AAPL" },
+      { name: "Google", symbol: "GOOG" }
+    ]
   end
 end

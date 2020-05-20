@@ -1,10 +1,17 @@
 import React from 'react';
+import SearchResult from './SearchResult';
 
-function SearchResults(props) {
+function SearchResults({ results }) {
   return (
     <div>
-      {props.results && props.results.map(result => {
-        return (<div>{result}</div>);
+      {results && results.map(result => {
+        return (
+          <ul>
+            <li>
+              <SearchResult result={result} />
+            </li>
+          </ul>
+        );
       })}
     </div>
   );
