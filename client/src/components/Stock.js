@@ -5,11 +5,12 @@ import axios from 'axios';
 function Stock() {
   const { symbol } = useParams();
   const [loaded, setLoaded] = useState(false);
+  const [loadedSymbol, setLoadedSymbol] = useState(null);
   const [name, setName] = useState(null);
   const [prices, setPrices] = useState([]);
 
   useEffect(() => {
-    if (loaded) {
+    if (loadedSymbol === symbol) {
       return;
     }
 
@@ -21,14 +22,15 @@ function Stock() {
       if (data) {
         setName(data.name);
         setPrices(data.prices);
+        setLoadedSymbol(symbol);
         setLoaded(true);
       }
     });
-  }, [loaded]);
+  }, [loadedSymbol, symbol]);
 
   return (
     <div>
-      {!loaded &&
+      { !loaded &&
         <span>Loading...</span>
       }
       { loaded &&
