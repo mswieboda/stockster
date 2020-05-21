@@ -20,7 +20,7 @@ function Search() {
   };
 
   return (
-    <div>
+    <div className="search">
       <SearchInput onChange={onChange} />
       <SearchResults results={results} />
     </div>
