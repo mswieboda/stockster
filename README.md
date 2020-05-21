@@ -92,3 +92,29 @@ bundle exec rake db:setup
 This will drop, and create the DB, apply the current table schema, and run the seeds.
 
 Currently, running the seeds will create Stock DB records by parsing the `company_stock_list.csv`.
+
+
+## IEX keys
+
+In order to perform API requests you'll need to add a Rails config file with IEX public and secret key info
+
+```
+# config/iex.yml
+
+default: &default
+  publishable_token: pk_xyz_123
+  secret_token: sk_xyz_123
+  endpoint: https://sandbox.iexapis.com/v1
+
+development:
+  <<: *default
+  endpoint: https://sandbox.iexapis.com/v1
+
+```
+
+If your Rails server or console are running, you may need to stop them and restart `spring` just in case:
+
+```
+bundle exec spring stop
+```
+
