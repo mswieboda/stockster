@@ -12,10 +12,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <header>
-          Stockster
-          <Search/>
-        </header>
+        <Search/>
       </div>
       <Switch>
         <Route path="/stocks/:symbol">

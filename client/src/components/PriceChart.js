@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Chart from "chart.js";
+import "./PriceChart.css"
 
 function PriceChart({ data }) {
   const chartRef = React.createRef();
@@ -17,11 +18,14 @@ function PriceChart({ data }) {
         datasets: [
           {
             label: "Price",
-            data: data.map(day => day.avg_price)
+            data: data.map(day => day.avg_price),
+            backgroundColor: "#f90",
           }
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           xAxes: [{
             type: 'time',
@@ -36,8 +40,8 @@ function PriceChart({ data }) {
   }, [loaded, data, chartRef]);
 
   return (
-    <div>
-      <canvas id="priceChart" ref={chartRef} />
+    <div className="price-chart">
+      <canvas id="priceChart" ref={chartRef}/>
     </div>
   );
 }

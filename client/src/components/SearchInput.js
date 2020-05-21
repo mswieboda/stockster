@@ -8,6 +8,7 @@ function SearchInput({ onChange }) {
       name="search"
       placeholder="Search a Company"
       className="search-input"
+      autoComplete="off"
       onChange={onChange}
     />
   );
