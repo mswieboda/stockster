@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Stock() {
-  const [symbol, setSymbol] = useState("AAPL");
+  const { symbol } = useParams();
   const [loaded, setLoaded] = useState(false);
   const [name, setName] = useState(null);
   const [prices, setPrices] = useState([]);
