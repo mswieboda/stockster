@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function SearchResult({ result }) {
+function SearchResult({ result, onResultClick }) {
   return (
-    <Link to={`/stocks/${result.symbol}`}>{result.name}</Link>
+    <Link
+      to={`/stocks/${result.symbol}`}
+      onClick={onResultClick}
+    >
+      {result.name}
+    </Link>
   );
 }
 
