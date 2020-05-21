@@ -3,17 +3,15 @@ import SearchResult from './SearchResult';
 
 function SearchResults({ results }) {
   return (
-    <div>
-      {results && results.map(result => {
+    <ul>
+      {results && results.map((result, index) => {
         return (
-          <ul>
-            <li>
-              <SearchResult result={result} />
-            </li>
-          </ul>
+          <li key={index}>
+            <SearchResult result={result} />
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }
 
