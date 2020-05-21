@@ -26,5 +26,5 @@
 # rbenv
 .ruby-version
 
-# ignore application.yml for ENV keys
-config/application.yml
+# ignore configs with secret keys
+config/iex.yml
