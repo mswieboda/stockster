@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchInput.css';
 
 function SearchInput(props) {
   return (
@@ -6,7 +7,7 @@ function SearchInput(props) {
       type="search"
       name="search"
       placeholder="Search a Company"
-      className="search"
+      className="search-input"
       onChange={props.onChange}
     />
   );
