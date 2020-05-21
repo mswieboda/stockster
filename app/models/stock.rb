@@ -3,7 +3,7 @@ require 'iex-ruby-client'
 class Stock < ApplicationRecord
   validates :symbol, uniqueness: true
 
-  def prices_chart_data
+  def price_chart_data
     client = IEX::Api::Client.new(
       publishable_token: Rails.configuration.iex["publishable_token"],
       secret_token: Rails.configuration.iex["secret_token"],

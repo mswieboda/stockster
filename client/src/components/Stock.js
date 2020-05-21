@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
+import PriceChart from './PriceChart'
 
 function Stock() {
   const { symbol } = useParams();
   const [loaded, setLoaded] = useState(false);
   const [loadedSymbol, setLoadedSymbol] = useState(null);
   const [name, setName] = useState(null);
-  const [prices, setPrices] = useState([]);
+  const [priceChartData, setPriceChartData] = useState([]);
 
   useEffect(() => {
     if (loadedSymbol === symbol) {
@@ -21,7 +22,7 @@ function Stock() {
 
       if (data) {
         setName(data.name);
-        setPrices(data.prices);
+        setPriceChartData(data.price_chart_data);
         setLoadedSymbol(symbol);
         setLoaded(true);
       }
@@ -38,9 +39,7 @@ function Stock() {
           <div>
             {symbol} - {name}
           </div>
-          <div>
-            {prices}
-          </div>
+          <PriceChart data={priceChartData} />
         </div>
       }
     </div>

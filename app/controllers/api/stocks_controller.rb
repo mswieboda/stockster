@@ -2,7 +2,7 @@ class Api::StocksController < ApplicationController
   def find
     @stock = Stock.find_by(symbol: params[:symbol])
 
-    render json: @stock.as_json(only: [:name, :symbol], methods: :prices_chart_data)
+    render json: @stock.as_json(only: [:name, :symbol], methods: :price_chart_data)
   end
 
   def search
