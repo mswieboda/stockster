@@ -28,6 +28,10 @@ module Stockster
     config.api_only = true
 
     # IEX config keys
-    config.iex = config_for(:iex)
+    if File.exists?('config/iex.yml')
+      config.iex = config_for(:iex)
+    else
+      config.iex = {}
+    end
   end
 end

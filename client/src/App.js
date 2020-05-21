@@ -6,19 +6,20 @@ import {
 } from 'react-router-dom';
 import Search from './components/Search';
 import Stock from './components/Stock';
-import './App.css';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
-      <div className="app">
-        <Search/>
-      </div>
+      <Search/>
+
       <Switch>
         <Route path="/stocks/:symbol">
           <Stock />
         </Route>
       </Switch>
+
+      <Footer />
     </Router>
   );
 }

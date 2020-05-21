@@ -118,3 +118,7 @@ If your Rails server or console are running, you may need to stop them and resta
 bundle exec spring stop
 ```
 
+
+# Attribution
+
+[Data provided by IEX Cloud](https://iexcloud.io)

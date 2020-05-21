@@ -20,9 +20,11 @@ function Search() {
   };
 
   return (
-    <div className="search">
-      <SearchInput onChange={onChange} />
-      <SearchResults results={results} />
+    <div className="search-container">
+      <div className="search">
+        <SearchInput onChange={onChange} />
+        <SearchResults results={results} />
+      </div>
     </div>
   );
 }
