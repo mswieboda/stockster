@@ -98,6 +98,8 @@ Currently, running the seeds will create Stock DB records by parsing the `compan
 
 In order to perform API requests you'll need to add a Rails config file with IEX public and secret key info
 
+https://iexcloud.io/ - You can sign up with IEX and choose "free to start" to get API keys
+
 ```
 # config/iex.yml
 
