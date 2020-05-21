@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Chart from "chart.js";
 import "./PriceChart.css"
 
-function PriceChart({ data }) {
+function PriceChart({ symbol, data }) {
   const chartRef = React.createRef();
   const [loaded, setLoaded] = useState(false);
+  const [loadedSymbol, setLoadedSymbol] = useState(null);
 
   useEffect(() => {
-    if (loaded || !data || !data.length) {
+    if ((loaded && loadedSymbol === symbol) || !data || !data.length) {
       return;
     }
 
@@ -36,8 +37,10 @@ function PriceChart({ data }) {
         }
       }
     });
+
+    setLoadedSymbol(symbol);
     setLoaded(true);
-  }, [loaded, data, chartRef]);
+  }, [loaded, loadedSymbol, symbol, data, chartRef]);
 
   return (
     <div className="price-chart">

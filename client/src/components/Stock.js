@@ -18,8 +18,6 @@ function Stock() {
     axios.get(`/api/stocks/${symbol}`).then(response => {
       let data = response.data;
 
-      console.log(`GET ${symbol}`);
-
       if (data) {
         setName(data.name);
         setPriceChartData(data.price_chart_data);
@@ -39,7 +37,7 @@ function Stock() {
           <div>
             {symbol} - {name}
           </div>
-          <PriceChart data={priceChartData} />
+          <PriceChart symbol={symbol} data={priceChartData} />
         </div>
       }
     </div>
