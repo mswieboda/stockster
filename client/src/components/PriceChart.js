@@ -33,7 +33,17 @@ function PriceChart({ symbol, data }) {
             time: {
               unit: 'day'
             }
+          }],
+          yAxes: [{
+            ticks: {
+              callback: (value, index, values) => '$' + value.toFixed(0)
+            }
           }]
+        },
+        tooltips: {
+          callbacks: {
+            label: (tooltipItem, data) => '$' + tooltipItem.yLabel.toFixed(4)
+          }
         }
       }
     });
